@@ -19,7 +19,6 @@
 	<!-- Sections needed for the plugin creating RELEASES from SNAPSHOTS -->
 	<scm>
     	<developerConnection>scm:git:git@github.com:rbourner/common-parent.git</developerConnection>
-	  <tag>common-parent-1.0.1</tag>
   </scm>
 	<distributionManagement>
 <!-- 	
