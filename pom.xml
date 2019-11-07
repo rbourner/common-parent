@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 
 	<!-- A R T I F A C T - I N F O -->
 	<groupId>com.redhat.brms</groupId>
 	<artifactId>common-parent</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<!-- P R O P E R T I E S -->
 	<properties>
@@ -21,7 +19,8 @@
 	<!-- Sections needed for the plugin creating RELEASES from SNAPSHOTS -->
 	<scm>
     	<developerConnection>scm:git:git@github.com:rbourner/wmissuereproducer.git</developerConnection>
-	</scm>
+	  <tag>common-parent-1.0.0</tag>
+  </scm>
 	<distributionManagement>
 <!-- 	
 		<repository>
