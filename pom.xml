@@ -6,7 +6,7 @@
 	<!-- A R T I F A C T - I N F O -->
 	<groupId>com.redhat.brms</groupId>
 	<artifactId>common-parent</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 
 	<!-- P R O P E R T I E S -->
 	<properties>
@@ -19,7 +19,7 @@
 	<!-- Sections needed for the plugin creating RELEASES from SNAPSHOTS -->
 	<scm>
     	<developerConnection>scm:git:git@github.com:rbourner/common-parent.git</developerConnection>
-	  <tag>common-parent-1.0.1</tag>
+	  <tag>common-parent-1.0.0</tag>
   </scm>
 	<distributionManagement>
 <!-- 	
