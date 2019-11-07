@@ -1,0 +1,8 @@
+pom.xml.releaseBackup
+release.properties
+**.settings/
+**/target/**
+.project
+.classpath
+.DS_Store
+/target/
