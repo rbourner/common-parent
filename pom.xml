@@ -17,6 +17,24 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+	
+	<!-- Sections needed for the plugin creating RELEASES from SNAPSHOTS -->
+	<scm>
+    	<developerConnection>scm:git:git@github.com:rbourner/wmissuereproducer.git</developerConnection>
+	</scm>
+	<distributionManagement>
+<!-- 	
+		<repository>
+			<id>NexusServer</id>
+			<url>http://127.0.0.1:8081/repository/ChubbRepo/</url>
+		</repository>	
+-->
+		<repository>
+			<id>local</id>
+			<name>Local repository</name>
+			<url>file:///Users/rbourner/.m2/repository</url>
+		</repository>	
+	</distributionManagement>
 
 	<!-- D E P E N D E N C Y - M A N A G E M E N T -->	
 	<dependencyManagement>
@@ -32,46 +50,16 @@
 	</dependencyManagement>
 	
 	<build>
-
-		<!-- This pluginManagement is used to fix the following Eclipse error: -->
-		<!-- Plugin execution not covered by lifecycle configuration: org.kie:kie-maven-plugin:xxx.Final:build 
-			(execution: default-build, phase: compile) -->
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>org.kie</groupId>
-										<artifactId>kie-maven-plugin</artifactId>
-										<versionRange>(6.0.0,]</versionRange>
-										<goals>
-											<goal>build</goal>
-											<goal>compile</goal>
-											<goal>injectreactive</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore />
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-				<!-- Maven plugin for packaging as kjar -->
-				<plugin>
-					<groupId>org.kie</groupId>
-					<artifactId>kie-maven-plugin</artifactId>
-					<version>${kie.version}</version>
-					<extensions>true</extensions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+    	<plugins>
+    		<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-release-plugin</artifactId>
+    			<version>2.5.3</version>
+    		</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8</version>
+			</plugin>
+    	</plugins>
+    </build>
 </project>
